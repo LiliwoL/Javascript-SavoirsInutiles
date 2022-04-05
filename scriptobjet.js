@@ -149,6 +149,7 @@ function supprimer(){
     event.currentTarget.parentNode.parentNode.removeChild( event.currentTarget.parentNode );
 }
 
+// Fonction appelée au bouton Tri date
 function triDate()
 {
     // Tableau des savoirs
@@ -174,14 +175,16 @@ function triDate()
         }
     }
 
+    // Avant
     console.log(T_Savoirs);
 
     // Tri du tableau
     T_Savoirs.sort( triSavoirsParDate );
 
+    // Après
     console.log(T_Savoirs);
 
-    // Vidage du DOM
+    // Vidage du DOM (méthode bourrin)
     document.getElementById("olListeSavoir").innerHTML = '';
 
     // Affichage dans le DOM
@@ -190,7 +193,9 @@ function triDate()
     });
 }
 
+// fonction de comparaison de 2 savoirs
 function triSavoirsParDate(a, b)
 {
+    // Renvoie -1, soit 1, soit 0
     return a.date - b.date;
 }
